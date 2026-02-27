@@ -1,0 +1,23 @@
+{
+  "name": "requiem",
+  "version": "0.1.0",
+  "description": "Aggregated prediction market trading terminal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:ingestion": "tsx src/test_ingestion.ts",
+    "test:adapter": "tsx src/test_adapter.ts",
+    "test:matching": "tsx src/test_matching.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "dotenv": "^17.3.1",
+    "natural": "^8.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
