@@ -8,9 +8,11 @@
     "test:ingestion": "tsx src/test_ingestion.ts",
     "test:adapter": "tsx src/test_adapter.ts",
     "test:matching": "tsx src/test_matching.ts",
+    "test:sync": "tsx src/test_sync.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.98.0",
     "axios": "^1.13.5",
     "dotenv": "^17.3.1",
     "natural": "^8.1.1"

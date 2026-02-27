@@ -1,4 +1,4 @@
-export type Platform = "predict" | "probable" | "xo";
+export type Platform = "predict" | "probable" | "xo" | "polymarket";
 
 export interface RawMarket {
   external_id: string;

@@ -14,4 +14,10 @@ export const env = {
 
   XO_API_URL:
     process.env.XO_API_URL || "https://api-mainnet.xo.market/api",
+
+  POLYMARKET_API_URL:
+    process.env.POLYMARKET_API_URL || "https://gamma-api.polymarket.com",
+
+  SUPABASE_URL: process.env.SUPABASE_URL || "",
+  SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || "",
 } as const;

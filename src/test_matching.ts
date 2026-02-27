@@ -1,6 +1,7 @@
 import { fetchPredictMarkets } from "./fetchers/predict.js";
 import { fetchProbableMarkets } from "./fetchers/probable.js";
 import { fetchXOMarkets } from "./fetchers/xo.js";
+import { fetchPolymarketMarkets } from "./fetchers/polymarket.js";
 import { adaptAll } from "./adapters/market-adapter.js";
 import { matchMarkets } from "./matching/grouping-engine.js";
 import type { FetcherResult, Market, Platform } from "./types/market.js";
@@ -135,9 +136,10 @@ async function runLiveTest() {
     fetchPredictMarkets(),
     fetchProbableMarkets(),
     fetchXOMarkets(),
+    fetchPolymarketMarkets(),
   ]);
 
-  const platforms: Platform[] = ["predict", "probable", "xo"];
+  const platforms: Platform[] = ["predict", "probable", "xo", "polymarket"];
   const fetched: FetcherResult[] = results.map((r, i) => {
     if (r.status === "fulfilled") return r.value;
     return {

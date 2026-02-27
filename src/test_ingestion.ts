@@ -1,6 +1,7 @@
 import { fetchPredictMarkets } from "./fetchers/predict.js";
 import { fetchProbableMarkets } from "./fetchers/probable.js";
 import { fetchXOMarkets } from "./fetchers/xo.js";
+import { fetchPolymarketMarkets } from "./fetchers/polymarket.js";
 import type { RawMarket, FetcherResult } from "./types/market.js";
 
 function formatExpiry(date: Date | null): string {
@@ -29,11 +30,12 @@ async function main() {
     fetchPredictMarkets(),
     fetchProbableMarkets(),
     fetchXOMarkets(),
+    fetchPolymarketMarkets(),
   ]);
 
   const fetched: FetcherResult[] = results.map((r, i) => {
     if (r.status === "fulfilled") return r.value;
-    const platforms = ["predict", "probable", "xo"] as const;
+    const platforms = ["predict", "probable", "xo", "polymarket"] as const;
     return {
       platform: platforms[i],
       markets: [],
